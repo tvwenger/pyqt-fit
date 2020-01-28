@@ -2,6 +2,10 @@
 PyQt-Fit
 ========
 
+Trey Wenger - updates January 2020
+Changed all occurances of
+"from path import path" to "from path import Path as path"
+
 PyQt-Fit is a regression toolbox in Python with simple GUI and graphical tools
 to check your results. It currently handles regression based on user-defined
 functions with user-defined residuals (i.e. parametric regression) or
