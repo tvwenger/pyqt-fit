@@ -2,9 +2,16 @@
 PyQt-Fit
 ========
 
-Trey Wenger - updates January 2020
-Changed all occurances of
-"from path import path" to "from path import Path as path"
+Updated May 2023 by Trey Wenger
+
+Installation via `conda`:
+
+```
+conda create --name kd
+conda activate kd
+conda install -c conda-forge python==3.7.2 numpy==1.19.0
+pip install git+https://github.com/tvwenger/pyqt-fit.git
+```
 
 PyQt-Fit is a regression toolbox in Python with simple GUI and graphical tools
 to check your results. It currently handles regression based on user-defined
