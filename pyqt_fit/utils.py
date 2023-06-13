@@ -31,12 +31,12 @@ def make_ufunc(nin = None, nout=1):
     you know the wanted type for the output.
 
     :param int nin: Number of input. Default is found by using
-        ``inspect.getargspec``
+        ``inspect.getfullargspec``
     :param int nout: Number of output. Default is 1.
     """
     def f(fct):
         if nin is None:
-            Nin = len(inspect.getargspec(fct).args)
+            Nin = len(inspect.getfullargspec(fct).args)
         else:
             Nin = nin
         return np.frompyfunc(fct, Nin, nout)
@@ -57,7 +57,7 @@ def numpy_trans(fct):
     def f(z, out=None):
         z = np.asanyarray(z)
         if out is None:
-            out = np.empty(z.shape, dtype=type(z.dtype.type() + 0.))
+            out = np.empty(z.shape, dtype=z.dtype)
             arg_out = out
         else:
             arg_out = out.reshape(z.shape)
@@ -88,7 +88,7 @@ def numpy_trans_idx(fct):
         if len(real_shape) == 0:
             z = z.reshape(1)
         if out is None:
-            out = np.empty(z.shape, dtype=type(z.dtype.type() + 0.))
+            out = np.empty(z.shape, dtype=z.dtype)
         else:
             out.shape = z.shape
         out = fct(z, out=out)
@@ -119,7 +119,7 @@ def numpy_method_idx(fct):
         if len(real_shape) == 0:
             z = z.reshape(1)
         if out is None:
-            out = np.empty(z.shape, dtype=type(z.dtype.type() + 0.))
+            out = np.empty(z.shape, dtype=z.dtype)
         else:
             out.shape = z.shape
         out = fct(self, z, out=out)

@@ -225,7 +225,7 @@ class KDE1DMethod(object):
                 return cdf(kde, np.atleast_1d(x), cdf_out) - p
             return optimize.newton(f, approx, fprime=pdf, tol=1e-6)
 
-        return find_inverse(points, coarse_result, out=out)
+        return find_inverse(points, coarse_result)
 
     def sf(self, kde, points, out):
         r"""
@@ -494,8 +494,7 @@ class KDE1DMethod(object):
             low = kde.lower if i == 0 else sp[i-1]
             return integrate.quad(pdf, low, sp[i])[0]
 
-        parts = np.empty(sp.shape, dtype=float)
-        comp_cdf(np.arange(len(sp)), out=parts)
+        parts = comp_cdf(np.arange(len(sp))).astype(float)
 
         ints = parts.cumsum()
 

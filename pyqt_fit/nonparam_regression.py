@@ -329,7 +329,7 @@ class NonParamRegression(object):
         elif len(real_shape) == 1:
             points = points.reshape(1, real_shape[0])
         if out is None:
-            out = np.empty((points.shape[-1],), dtype=type(points.dtype.type() + 0.))
+            out = np.empty((points.shape[-1],), dtype=points.dtype)
         else:
             out.shape = (points.shape[-1],)
         self._fitted_method.evaluate(self, points, out)
