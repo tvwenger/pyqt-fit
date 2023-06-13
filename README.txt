@@ -2,16 +2,22 @@
 PyQt-Fit
 ========
 
-Updated May 2023 by Trey Wenger
+Updated June 2023 by Trey Wenger (v1.4.0)
 
 Installation via `conda`:
 
 ```
-conda create --name kd
+conda create --name kd -c conda-forge python
 conda activate kd
-conda install -c conda-forge python==3.7.2 numpy==1.19.0
+# install with cython support (faster)
+pip install git+https://github.com/tvwenger/pyqt-fit.git[cython]
+# install without cython support (slower)
 pip install git+https://github.com/tvwenger/pyqt-fit.git
 ```
+
+N.B. If you install with cython support, then you will get a bunch of warning
+messages the first time you import `pyqt_fit`. These warnings can be safely
+ignored.
 
 PyQt-Fit is a regression toolbox in Python with simple GUI and graphical tools
 to check your results. It currently handles regression based on user-defined
@@ -19,10 +25,6 @@ functions with user-defined residuals (i.e. parametric regression) or
 non-parametric regression, either local-constant or local-polynomial, with the
 option to provide your own. There is also a full-GUI access, that currently
 provides an interface only to parametric regression.
-
-The GUI for 1D data analysis is invoked with:
-
-    $ pyqt_fit1d.py
 
 PyQt-Fit can also be used from the python interpreter. Here is a typical session:
 

@@ -970,8 +970,15 @@ class CyclicMethod(KDE1DMethod):
 
 cyclic = CyclicMethod()
 
-Transform = namedtuple('Tranform', ['__call__', 'inv', 'Dinv'])
-
+class Transform:
+    def __init__(self, func, inv, Dinv):
+        self.func = func
+        self.inv = inv
+        self.Dinv = Dinv
+        
+    def __call__(self, *args):
+        return self.func(*args)
+        
 def _inverse(x, out=None):
     return np.divide(1, x, out)
 
