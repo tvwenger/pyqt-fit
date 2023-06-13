@@ -10,7 +10,7 @@ Installation via `conda`:
 conda create --name kd -c conda-forge python
 conda activate kd
 # install with cython support (faster)
-pip install git+https://github.com/tvwenger/pyqt-fit.git[cython]
+pip install git+https://github.com/tvwenger/pyqt-fit.git#egg=pyqt-fit[cython]
 # install without cython support (slower)
 pip install git+https://github.com/tvwenger/pyqt-fit.git
 ```
