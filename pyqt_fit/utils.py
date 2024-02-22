@@ -251,7 +251,7 @@ def namedtuple(typename, field_names, verbose=False, rename=False):
 
 
 #
-from scipy import sqrt
+from numpy import sqrt
 from numpy import finfo, asarray, asfarray, zeros
 
 _epsilon = sqrt(finfo(float).eps)
