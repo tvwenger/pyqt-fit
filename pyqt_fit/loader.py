@@ -81,16 +81,16 @@ def load(find_functions, search_path=None):
     """
     caller_module = inspect.getmodule(inspect.stack()[1][0])
     system_files = [caller_module.__file__]
-    module_path = path(caller_module.__file__).abspath().dirname()
+    module_path = path(caller_module.__file__).absolute().dirname()
     sys_files = set()
     for f in system_files:
         if f.endswith(".pyo") or f.endswith(".pyc"):
             f = f[:-3] + "py"
-        sys_files.add(path(f).abspath())
+        sys_files.add(path(f).absolute())
     if search_path is None:
         search_path = module_path
     else:
-        search_path = path(search_path).abspath()
+        search_path = path(search_path).absolute()
     fcts = {}
 # Search for python, cython and modules
     modules = set()

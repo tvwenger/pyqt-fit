@@ -104,7 +104,7 @@ class ParametersModel(QtCore.QAbstractTableModel):
 class QtFitDlg(QtGui.QDialog):
     def __init__(self, *args, **kwords):
         QtGui.QDialog.__init__(self, *args, **kwords)
-        p = (path(__file__).dirname() / 'qt_fit.ui').abspath()
+        p = (path(__file__).dirname() / 'qt_fit.ui').absolute()
         uic.loadUi(p, self)
         if sys.platform != "darwin":
             self.selectInputFile.setMaximumWidth(32)
