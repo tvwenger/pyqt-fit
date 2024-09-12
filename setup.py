@@ -31,7 +31,7 @@ setup(name='PyQt-Fit',
                         'matplotlib',
                         'path.py >=2.4.1'
                         ],
-      extras_require={'Cython': ["Cython >=0.17"]
+      extras_require={'Cython': ["Cython >=0.17, <3.0"]
                       },
       license='LICENSE.txt',
       long_description=open('README.txt').read(),
