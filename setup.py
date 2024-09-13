@@ -26,7 +26,7 @@ setup(name='PyQt-Fit',
                                  'math.pxd'
                                  ]
                     },
-      install_requires=['numpy >=1.5.0',
+      install_requires=['numpy >=1.5.0, <2.0.0',
                         'scipy >=0.10.0',
                         'matplotlib',
                         'path.py >=2.4.1'

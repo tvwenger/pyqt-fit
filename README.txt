@@ -2,12 +2,12 @@
 PyQt-Fit
 ========
 
-Updated June 2023 by Trey Wenger (v1.4.0)
+Updated September 2024 by Trey Wenger (v1.4.2)
 
 Installation via `conda`:
 
 ```
-conda create --name kd -c conda-forge python
+conda create --name kd -c conda-forge "python<3.12" "numpy<2.0.0" pip
 conda activate kd
 # install with cython support (faster)
 pip install git+https://github.com/tvwenger/pyqt-fit.git#egg=pyqt-fit[cython]
